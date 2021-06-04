@@ -1,5 +1,4 @@
 import express from "express";
-import Book from "../models/Book";
 import BookService from '../services/BookService';
 
 class BookController {
@@ -14,7 +13,9 @@ class BookController {
   }
 
   async createBook(req: express.Request, res: express.Response) {
-    
+    const {book} = req.body;
+    BookService.create(book);
+    return res.status(200).send('Created.');
   }
 }
 
