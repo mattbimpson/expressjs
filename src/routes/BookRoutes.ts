@@ -1,7 +1,7 @@
-import {RoutesConfig} from './shared/RoutesConfig';
+import {RoutesConfig} from './RoutesConfig';
 import express from 'express';
-import BookController from './controllers/BookController';
-import Middleware from './Middleware';
+import BookController from '../controllers/BookController';
+import Middleware from '../Middleware';
 
 export class BookRoutes extends RoutesConfig {
     constructor(app: express.Application) {
