@@ -3,8 +3,11 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import swaggerUi from 'swagger-ui-express';
 import * as swaggerDoc from '../swagger.json';
+import { RoutesConfig } from './shared/RoutesConfig';
+import { BookRoutes } from './BookRoutes';
 
 const app: express.Application = express();
+const routes: Array<RoutesConfig> = [];
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -19,6 +22,8 @@ const catchAsync = (fn: Function) => {
     fn(req, res, next).catch(next);
   };
 };
+
+routes.push(new BookRoutes(app));
 
 app.listen(3000, () => {
   console.log('app listening on port 3000');
