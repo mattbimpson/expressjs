@@ -11,7 +11,7 @@ export class BookRoutes extends RoutesConfig {
     configureRoutes(): express.Application {
 
       this.app
-        .route('/book')
+        .route('/book/all')
         .get(BookController.getAllBooks);
 
       this.app.param('bookId', Middleware.extractBookId);
