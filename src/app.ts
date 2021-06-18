@@ -5,7 +5,7 @@ import swaggerUi from 'swagger-ui-express';
 import * as swaggerDoc from '../swagger.json';
 import { BookRoutes } from './routes/BookRoutes';
 
-const app: express.Application = express();
+export const app: express.Application = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -18,6 +18,6 @@ if (env?.toLowerCase() === 'dev') {
 
 new BookRoutes(app);
 
-app.listen(3000, () => {
+export const server = app.listen(3000, () => {
   console.log('app listening on port 3000');
 });

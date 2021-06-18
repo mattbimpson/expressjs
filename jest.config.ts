@@ -7,7 +7,7 @@ export default {
     "^@/(.*)$": "<rootDir>/src/$1"
   },
   testMatch: [
-    "**/tests/**/*.spec.(ts)|**/__tests__/*.(ts)"
+    "**/*.spec.(ts)"
   ],
   testURL: "http://localhost/",
   globals: {
